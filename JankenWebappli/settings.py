@@ -129,13 +129,19 @@ LOGIN_URL = '/janken/login/'
 AUTH_USER_MODEL = 'janken.CustomUser'
 
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, '/media/img/')
+STATIC_URL = '/static/'  # 静的ファイルのURL
 
-STATICFILES_DIRS = [ os.path.join(BASE_DIR, 'static'), ]
+# 収集先ディレクトリ（静的ファイルの最終配置場所）
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-MEDIA_URL = 'media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# 静的ファイルの元ディレクトリ（開発中に使用）
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+
+MEDIA_URL = '/media/'  # メディアファイルのURL
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # メディアファイルのディレクトリ
+
 
 
 
